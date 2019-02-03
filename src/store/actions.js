@@ -7,4 +7,7 @@ export default {
   saveJoke({ commit }, joke) {
     commit(types.SAVE_JOKE, joke);
   },
+  removeJoke({ commit }, jokeId) {
+    commit(types.REMOVE_JOKE, jokeId);
+  },
 };

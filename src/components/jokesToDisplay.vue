@@ -17,15 +17,13 @@ export default {
     singleJoke,
   },
   computed: {
-    jokes(){
+    jokes() {
       return this.$store.getters.jokes;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
 
 </style>
-
-

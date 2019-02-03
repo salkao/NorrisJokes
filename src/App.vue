@@ -17,7 +17,11 @@ export default {
     DropDown,
     jokesToDisplay,
   },
-  created: function () {
+  mounted() {
+    // eslint-disable-next-line
+    M.AutoInit();
+  },
+  created() {
     axios.get('https://api.chucknorris.io/jokes/categories')
       .then((response) => {
         this.$store.dispatch('saveCategories', response.data);
