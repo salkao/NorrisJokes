@@ -1,17 +1,27 @@
 <template>
+
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <DropDown/>
+    <jokes-to-display/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import axios from 'axios';
+import DropDown from './components/DropDown.vue';
+import jokesToDisplay from './components/jokesToDisplay.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    DropDown,
+    jokesToDisplay,
+  },
+  created: function () {
+    axios.get('https://api.chucknorris.io/jokes/categories')
+      .then((response) => {
+        this.$store.dispatch('saveCategories', response.data);
+      });
   },
 };
 </script>
@@ -23,6 +33,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

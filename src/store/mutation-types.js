@@ -1,0 +1,4 @@
+export default {
+  SAVE_CATEGORIES: 'SAVE_CATEGORIES',
+  SAVE_JOKE: 'SAVE_JOKE',
+};
