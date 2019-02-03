@@ -2,15 +2,16 @@
 <div>
     <div class="col s12 m7">
       <div class="card horizontal">
-        <div class="card-image">
-          <img src="https://lorempixel.com/100/190/nature/6">
-        </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.</p>
+          <p>{{ singleJoke.value }}</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a
+            @click="removeJoke(singleJoke.id)"
+            class="waves-effect waves-light btn">
+            remove joke
+          </a>
         </div>
       </div>
     </div>
@@ -20,18 +21,23 @@
 
 <script>
 export default {
-  name:'singleJoke',
+  name: 'singleJoke',
   props: {
     singleJoke: {
       type: Object,
       required: true,
-    }
+    },
   },
-}
+  methods: {
+    removeJoke(jokeId) {
+      this.$store.dispatch('removeJoke', jokeId);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-.card horizontal{
-  width: 100%;
+.card{
+  width: 400px;
 }
 </style>
