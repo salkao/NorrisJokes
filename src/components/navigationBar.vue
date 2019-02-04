@@ -11,44 +11,39 @@
       </a>
       <p>Selected category:</p>
       <a
-        v-if="categorySelected"
+        v-if="selectedCategory"
         @click="removeCategory()"
         class="waves-effect indigo darken-4 btn"
         id="selectedCat">
-        {{ categoryName }}
+        {{ selectedCategory }}
       </a>
-      <a v-else=""  class="waves-effect indigo darken-4 btn" id="selectedCat">ALL CATEGORIES</a>
+      <a v-else class="waves-effect indigo darken-4 btn" id="selectedCat">ALL CATEGORIES</a>
       <a
         @click="fetchJoke()"
         class="waves-effect indigo darken-4 btn"
         id="crackJoke">
         crack a joke
       </a>
-
-      <!-- Dropdown Structure -->
       <ul id='dropdown1' class='dropdown-content'>
-      <li
-        v-for="(category, index) in categories"
-        :key="index"
-        @click="selectCategory(index)" >
-        <a href="#!">
-          {{ category }}
-        </a>
-      </li>
-  </ul>
+        <li
+          v-for="(category, index) in categories"
+          :key="index"
+          @click="selectCategory(category)" >
+          <a href="#!">
+            {{ category }}
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
-  <!-- Dropdown Trigger -->
-
 </div>
-<!-- Dropdown Structure -->
 </template>
 
 <script>
 import axios from 'axios';
 
 export default {
-  name: 'DropDown',
+  name: 'navigationBar',
   data() {
     return {
       categorySelected: false,
@@ -59,22 +54,19 @@ export default {
     categories() {
       return this.$store.getters.categories;
     },
+    selectedCategory() {
+      return this.$store.getters.selectedCategory;
+    },
   },
   methods: {
-    selectCategory(index) {
-      this.categoryName = this.$store.getters.categories[index];
-      this.categorySelected = true;
+    selectCategory(category) {
+      this.$store.dispatch('selectCategory', category);
     },
     removeCategory() {
-      this.categoryName = '';
-      this.categorySelected = false;
+      this.$store.dispatch('selectCategory', null);
     },
     fetchJoke() {
-      const categoryParametar = `?category=${this.categoryName}`;
-      axios.get(`https://api.chucknorris.io/jokes/random${this.categoryName ? categoryParametar : ''}`)
-        .then((response) => {
-          this.$store.dispatch('saveJoke', response.data);
-        });
+        this.$store.dispatch('saveJoke');
     },
   },
 };

@@ -1,20 +1,19 @@
 <template>
-
   <div id="app">
-    <DropDown/>
+    <navigationBar/>
     <jokes-to-display/>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import DropDown from './components/DropDown.vue';
+import navigationBar from './components/navigationBar.vue';
 import jokesToDisplay from './components/jokesToDisplay.vue';
 
 export default {
   name: 'app',
   components: {
-    DropDown,
+    navigationBar,
     jokesToDisplay,
   },
   mounted() {
@@ -22,10 +21,7 @@ export default {
     M.AutoInit();
   },
   created() {
-    axios.get('https://api.chucknorris.io/jokes/categories')
-      .then((response) => {
-        this.$store.dispatch('saveCategories', response.data);
-      });
+      this.$store.dispatch('saveCategories');
   },
 };
 </script>
