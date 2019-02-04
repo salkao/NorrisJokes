@@ -10,6 +10,7 @@
 
 <script>
 import singleJoke from './singleJoke.vue';
+import { filter } from 'lodash';
 
 export default {
   name: 'jokesToDisplay',
@@ -18,7 +19,10 @@ export default {
   },
   computed: {
     jokes() {
-      return this.$store.getters.jokes;
+      if(this.$store.getters.selectedCategory === null){
+        return this.$store.getters.jokes;
+      }
+      return _.filter(this.$store.getters.jokes, joke => joke.category == this.$store.getters.selectedCategory);
     },
   },
 };

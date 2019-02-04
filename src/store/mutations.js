@@ -11,7 +11,10 @@ export default {
   },
   [types.REMOVE_JOKE](state, jokeId) {
     const index = findIndex(state.jokes, { id: jokeId });
-
     state.jokes.splice(index, 1);
+  },
+  [types.SELECT_CATEGORY](state, categoryName) {
+    // eslint-disable-next-line
+    state.selectedCategory = categoryName;
   },
 };
