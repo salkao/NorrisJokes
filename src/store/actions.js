@@ -23,4 +23,7 @@ export default {
   selectCategory({ commit }, categoryName) {
     commit(types.SELECT_CATEGORY, categoryName);
   },
+  removeAllJokes({ commit }) {
+    commit(types.REMOVE_ALL_JOKES);
+  },
 };

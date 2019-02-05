@@ -1,10 +1,14 @@
 <template>
-  <div>
+  <div class="back">
+    <div class="container" >
     <div class="row">
-      <div v-for="(joke, index) in jokes" :key="index" class="col s3">
+      <div v-for="(joke, index) in jokes" :key="index" class="col s12 m3 l3">
         <single-joke :single-joke="joke"/>
       </div>
     </div>
+    </div>
+
+
   </div>
 </template>
 
@@ -30,4 +34,9 @@ export default {
 
 <style lang="scss" scoped>
 
+.container{
+  padding-top: 90px;
+}
+.col{
+}
 </style>

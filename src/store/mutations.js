@@ -1,5 +1,6 @@
 import { findIndex } from 'lodash';
 import types from './mutation-types';
+import { type } from 'os';
 
 export default {
   [types.SAVE_CATEGORIES](state, categories) {
@@ -16,5 +17,9 @@ export default {
   [types.SELECT_CATEGORY](state, categoryName) {
     // eslint-disable-next-line
     state.selectedCategory = categoryName;
+  },
+  [types.REMOVE_ALL_JOKES](state) {
+    state.jokes.length = 0;
+    state.jokes = [];
   },
 };

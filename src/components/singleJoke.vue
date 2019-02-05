@@ -1,21 +1,21 @@
 <template>
   <div>
-      <div class="col s12 m7">
-        <div class="card horizontal">
-        <div class="card-stacked">
-          <div class="card-content">
-            <p>{{ singleJoke.value }}</p>
-          </div>
-          <div class="card-action">
-            <a
-              @click="removeJoke(singleJoke.id)"
-              class="waves-effect waves-light btn">
-              remove joke
-            </a>
-          </div>
+
+        <div class="card horizontal grey darken-3">
+          <div class="card-stacked">
+            <div class="card-content">
+              <p>{{ singleJoke.value }}</p>
+            </div>
+            <div class="card-action">
+              <a id="button"
+                @click="removeJoke(singleJoke.id)"
+                class="waves-effect grey darken-4 btn">
+                remove joke
+              </a>
+            </div>
         </div>
       </div>
-    </div>
+
   </div>
 </template>
 
@@ -37,8 +37,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card{
-  min-width: 300px;
-  max-width: 350px;
+.card-content{
+  color: #212121;
+  font-weight: bolder;
+}
+.btn{
+  color: #9e9e9e;
+}
+.card-action{
+  border-color: #212121!important;
 }
 </style>
