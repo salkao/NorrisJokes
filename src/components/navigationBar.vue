@@ -13,6 +13,7 @@
               class='dropdown-trigger btn grey darken-4'
               data-target='dropdown1'>
               Select a category
+              <i class="large material-icons">arrow_drop_down</i>
             </a>
             <ul id='dropdown1' class='dropdown-content'>
               <li
@@ -32,8 +33,10 @@
               class="waves-effect grey darken-4 btn"
               id="selectedCat">
               {{ selectedCategory }}
+              <i class="large material-icons">clear</i>
             </a>
-            <a v-else class="waves-effect grey darken-4 btn" id="selectedCat">ALL CATEGORIES</a>
+            <a v-else class="waves-effect grey darken-4 btn" id="selectedCat">ALL CATEGORIES
+            </a>
           </div>
           <div class="col s2 m2 l2"></div>
           <div class="col s2 m2 l2">
@@ -42,6 +45,7 @@
               class="waves-effect grey darken-4 btn"
               id="crackJoke">
               crack a joke
+              <i class="large material-icons">add</i>
             </a>
           </div>
           <div class="col s2 m2 l2">
@@ -50,6 +54,7 @@
               class="waves-effect grey darken-4 btn"
               id="crackJoke">
               clear all jokes
+              <i class="large material-icons">delete</i>
             </a>
           </div>
         </div>
@@ -168,5 +173,12 @@ li {
 .dropDownText:hover{
   color: #212121 !important;
 
+}
+i{
+  float: right;
+  width: 10px;
+  height: 36px;
+  align-self: center;
+  margin-top: -14px;
 }
 </style>
