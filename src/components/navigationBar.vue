@@ -7,12 +7,12 @@
             <img src="../assets/icon.png" alt="" id="logo">
             <span id="logoText"> <span id="norris">Norris</span>Jokes</span>
           </div>
-          <div class="col s12 m2 l2">
+          <div class="col s3 m2 l2">
             <a
               id="dropdown"
               class='dropdown-trigger btn grey darken-4'
               data-target='dropdown1'>
-              Select a category
+              Category
               <i class="large material-icons">arrow_drop_down</i>
             </a>
             <ul id='dropdown1' class='dropdown-content'>
@@ -26,7 +26,7 @@
               </li>
             </ul>
           </div>
-          <div class="col s12 m2 l2">
+          <div class="col s3 m2 l2">
             <a
               v-if="selectedCategory"
               @click="removeCategory()"
@@ -38,8 +38,8 @@
             <a v-else class="waves-effect grey darken-4 btn" id="selectedCat">ALL CATEGORIES
             </a>
           </div>
-          <div class="col s12 m2 l2"></div>
-          <div class="col s12 m2 l2">
+          <div class="col s3 m2 l2 space"></div>
+          <div class="col s3 m2 l2">
             <a
               @click="fetchJoke()"
               class="waves-effect grey darken-4 btn"
@@ -48,7 +48,7 @@
               <i class="large material-icons">add</i>
             </a>
           </div>
-          <div class="col s12 m2 l2">
+          <div class="col s3 m2 l2">
             <a
               @click="removeAllJokes()"
               class="waves-effect grey darken-4 btn"
@@ -104,22 +104,19 @@ export default {
 
 @media only screen and (max-width : 480px) {
   nav{
-    height: 300px;
+    height: 120px;
     position: absolute;
   }
-  #logo{
-    margin-left: 160px;
-  }
-}
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 999px) {
-  a{
-    font-size: 10px;
-  }
-  #logoText{
+  .material-icons{
     display: none;
+}
+  a{
+    align-self: center;
+      font-size: 7px;
+      width: 90px;
+      height: 25px;
   }
-  #norris{
+  .space{
     display: none;
   }
 }

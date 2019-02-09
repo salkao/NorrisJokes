@@ -35,7 +35,7 @@ export default {
 <style lang="scss" scoped>
 @media only screen and (max-width : 480px) {
   .row{
-    margin-top: 250px;
+    margin-top: 80px;
   }
 }
 .container{
