@@ -112,15 +112,14 @@ export default {
 }
   a{
     align-self: center;
-      font-size: 7px;
-      width: 90px;
+      font-size: 6px;
+      width: 70px;
       height: 25px;
   }
   .space{
     display: none;
   }
 }
-
 
 .bar{
   position: fixed;
