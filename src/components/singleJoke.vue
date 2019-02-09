@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .card-content{
-  color: #212121;
+  color: #9e9e9e;
   font-weight: bolder;
 }
 .btn{

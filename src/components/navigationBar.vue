@@ -3,11 +3,11 @@
     <nav class="grey darken-3 bar">
       <div class="nav-wrapper">
         <div class="row">
-          <div class="col s2 m2 l2 first">
+          <div class="col s12 m2 l2 first">
             <img src="../assets/icon.png" alt="" id="logo">
             <span id="logoText"> <span id="norris">Norris</span>Jokes</span>
           </div>
-          <div class="col s2 m2 l2">
+          <div class="col s12 m2 l2">
             <a
               id="dropdown"
               class='dropdown-trigger btn grey darken-4'
@@ -26,7 +26,7 @@
               </li>
             </ul>
           </div>
-          <div class="col s2 m2 l2">
+          <div class="col s12 m2 l2">
             <a
               v-if="selectedCategory"
               @click="removeCategory()"
@@ -38,8 +38,8 @@
             <a v-else class="waves-effect grey darken-4 btn" id="selectedCat">ALL CATEGORIES
             </a>
           </div>
-          <div class="col s2 m2 l2"></div>
-          <div class="col s2 m2 l2">
+          <div class="col s12 m2 l2"></div>
+          <div class="col s12 m2 l2">
             <a
               @click="fetchJoke()"
               class="waves-effect grey darken-4 btn"
@@ -48,7 +48,7 @@
               <i class="large material-icons">add</i>
             </a>
           </div>
-          <div class="col s2 m2 l2">
+          <div class="col s12 m2 l2">
             <a
               @click="removeAllJokes()"
               class="waves-effect grey darken-4 btn"
@@ -102,16 +102,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-@media only screen and (max-width: 800px) {
-  a{
-    font-size: 6px;
+@media only screen and (max-width : 480px) {
+  nav{
+    height: 300px;
+    position: absolute;
   }
-
-  #logoText{
-    display: none;
-  }
-  #norris{
-    display: none;
+  #logo{
+    margin-left: 160px;
   }
 }
 /* Medium devices (landscape tablets, 768px and up) */
@@ -126,6 +123,8 @@ export default {
     display: none;
   }
 }
+
+
 .bar{
   position: fixed;
   z-index: 2;
