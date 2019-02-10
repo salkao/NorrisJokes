@@ -1,6 +1,5 @@
 import { findIndex } from 'lodash';
 import types from './mutation-types';
-import { type } from 'os';
 
 export default {
   [types.SAVE_CATEGORIES](state, categories) {

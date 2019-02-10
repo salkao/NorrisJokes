@@ -1,9 +1,9 @@
-import types from './mutation-types';
 import axios from 'axios';
+import types from './mutation-types';
 import state from './state';
 
 export default {
-  saveCategories({ commit }, categories) {
+  saveCategories({ commit }) {
     axios.get('https://api.chucknorris.io/jokes/categories')
     .then((response) => {
       commit(types.SAVE_CATEGORIES, response.data);
